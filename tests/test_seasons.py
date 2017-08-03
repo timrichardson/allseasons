@@ -75,6 +75,12 @@ class TestCalendar:
         date = datetime.date(2017, 3, 19)
         assert calendar.get_season(date) == expected
 
+    def test_my_birthday(self):
+        """This date falls between the astronomical and meteorological seasons
+        """
+        date = datetime.date(2000, 12, 12)
+        assert seasons.southern_meteo.get_season(date) == 'summer'
+
     @pytest.mark.parametrize(('loc', 'calendar', 'expected'), [
         (LONDON, seasons.northern_meteo, True),
         (LONDON, seasons.northern_astro, True),

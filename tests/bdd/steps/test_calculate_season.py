@@ -23,6 +23,16 @@ def test_form1():
 def test_form2():
     pass
 
+@pytest.mark.django_db
+@scenario('../features/calculate_season_hindu.feature', 'First form')
+def test_hindu_form1():
+    pass
+
+
+@pytest.mark.django_db
+@scenario('../features/calculate_season_hindu.feature', 'Second form')
+def test_hindu_form2():
+    pass
 
 # browser fixture comes from pytest-splinter
 # live_server fixture comes from pytest-django
